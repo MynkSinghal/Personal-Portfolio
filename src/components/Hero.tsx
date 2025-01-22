@@ -157,7 +157,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Skills Marquees */}
-        <div className="space-y-6 mb-12">
+        <div className="space-y-6 mb-32">
           {Object.entries(skills).map(([category, data], idx) => (
             <div key={category} className="relative mx-auto max-w-5xl">
               <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background/90 via-background/50 to-transparent z-10" />
@@ -172,16 +172,23 @@ const Hero = () => {
                 {data.svgs.map((svg, index) => (
                   <div
                     key={index}
-                    className="mx-6 flex items-center gap-3 bg-background/10 hover:bg-background/20 transition-colors backdrop-blur-sm px-4 py-2 rounded-xl"
+                    className="mx-6 flex items-center gap-3 relative overflow-hidden
+                      backdrop-blur-[6px] backdrop-saturate-[180%] 
+                      bg-white/[0.05] hover:bg-white/[0.1]
+                      border border-white/[0.05] 
+                      px-4 py-2 rounded-xl
+                      transition-all duration-300 ease-in-out
+                      group"
                   >
-                    <div className="w-12 h-12 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="w-12 h-12 flex items-center justify-center relative z-10">
                       {data.skills[index] === "AWS" ? (
                         <img src="/icons/aws-svgrepo-com.svg" alt="AWS" className="w-full h-full object-contain" />
                       ) : (
                         svg
                       )}
                     </div>
-                    <span className="text-sm text-white/80 whitespace-nowrap font-['Roboto'] font-medium tracking-wide">
+                    <span className="text-sm text-white/80 whitespace-nowrap font-['Roboto'] font-medium tracking-wide relative z-10">
                       {data.skills[index]}
                     </span>
                   </div>
