@@ -34,29 +34,32 @@ const FloatingNav = () => {
   ];
 
   return (
-    <motion.div
-      initial={{ y: 100 }}
-      animate={{ y: 0 }}
-      className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-black/50 backdrop-blur-lg rounded-full p-2 border border-white/10"
-    >
-      <nav className="flex items-center gap-2">
-        {navItems.map((item) => (
-          <motion.a
-            key={item.path}
-            href={item.path}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className={`p-3 rounded-full transition-colors ${
-              location.pathname === item.path 
-                ? "bg-accent text-black" 
-                : "hover:bg-white/10"
-            }`}
-          >
-            {item.icon}
-          </motion.a>
-        ))}
-      </nav>
-    </motion.div>
+    <div className="fixed inset-x-0 bottom-8 flex justify-center z-50">
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        className="w-auto"
+      >
+        <nav className="flex items-center gap-1 bg-black/40 backdrop-blur-lg rounded-full p-2 border border-primary/20">
+          {navItems.map((item) => (
+            <motion.a
+              key={item.path}
+              href={item.path}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className={`p-3 rounded-full transition-colors flex items-center gap-2 ${
+                location.pathname === item.path 
+                  ? "bg-primary text-white" 
+                  : "hover:bg-primary/20 text-white/80"
+              }`}
+            >
+              {item.icon}
+              <span className="text-sm font-medium hidden md:block">{item.name}</span>
+            </motion.a>
+          ))}
+        </nav>
+      </motion.div>
+    </div>
   );
 };
 

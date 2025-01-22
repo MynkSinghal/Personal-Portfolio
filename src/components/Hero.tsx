@@ -1,170 +1,188 @@
 import { motion } from "framer-motion";
-import { useTheme } from "@/components/theme-provider";
+import { AnimatedModal } from "./ui/animated-modal";
+import { useState } from "react";
+import { WebDevIcon, BackendIcon, ToolsIcon, LanguagesIcon } from "./icons/SkillIcons";
 
 const skills = {
-  "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Material UI", "Redux"],
-  "Backend": ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL"],
-  "Tools": ["Git", "Docker", "AWS", "Firebase", "Vercel", "Figma"],
-  "Languages": ["JavaScript", "Python", "Java", "C++", "SQL", "HTML/CSS"],
+  "Frontend Development": {
+    icon: <WebDevIcon className="w-6 h-6 text-white" />,
+    stats: [
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" className="w-6 h-6" />,
+        label: "Redux"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" className="w-6 h-6" />,
+        label: "Next.js"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" className="w-6 h-6" />,
+        label: "TypeScript"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" className="w-6 h-6" />,
+        label: "Tailwind"
+      }
+    ],
+    skills: ["Material UI", "Redux", "Next.js", "TypeScript", "Tailwind CSS"],
+    svgs: [
+      <img key="redux" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" className="w-full h-full object-contain" />,
+      <img key="next" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" className="w-full h-full object-contain" />,
+      <img key="ts" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" className="w-full h-full object-contain" />,
+      <img key="mui" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" className="w-full h-full object-contain" />
+    ]
+  },
+  "Backend Development": {
+    icon: <BackendIcon className="w-6 h-6 text-white" />,
+    stats: [
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" className="w-6 h-6" />,
+        label: "Node.js"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" className="w-6 h-6" />,
+        label: "MongoDB"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-6 h-6" />,
+        label: "PostgreSQL"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" className="w-6 h-6" />,
+        label: "GraphQL"
+      }
+    ],
+    skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL"],
+    svgs: [
+      <img key="node" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" className="w-full h-full object-contain" />,
+      <img key="express" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" className="w-full h-full object-contain" />,
+      <img key="mongo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" className="w-full h-full object-contain" />,
+      <img key="postgresql" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-full h-full object-contain" />
+    ]
+  },
+  "Development Tools": {
+    icon: <ToolsIcon className="w-6 h-6 text-white" />,
+    stats: [
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" className="w-6 h-6" />,
+        label: "Git"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" className="w-6 h-6" />,
+        label: "Docker"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg" className="w-6 h-6" />,
+        label: "AWS"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" className="w-6 h-6" />,
+        label: "Firebase"
+      }
+    ],
+    skills: ["Git", "Docker", "AWS", "Firebase", "Vercel", "Figma"],
+    svgs: [
+      <img key="git" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" className="w-full h-full object-contain" />,
+      <img key="docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" className="w-full h-full object-contain" />,
+      <img key="aws" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg" className="w-full h-full object-contain" />,
+      <img key="figma" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" className="w-full h-full object-contain" />
+    ]
+  },
+  "Programming Languages": {
+    icon: <LanguagesIcon className="w-6 h-6 text-white" />,
+    stats: [
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" className="w-6 h-6" />,
+        label: "JavaScript"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" className="w-6 h-6" />,
+        label: "Python"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" className="w-6 h-6" />,
+        label: "Java"
+      },
+      { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" className="w-6 h-6" />,
+        label: "C++"
+      }
+    ],
+    skills: ["JavaScript", "Python", "Java", "C++", "SQL", "HTML/CSS"],
+    svgs: [
+      <img key="js" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" className="w-full h-full object-contain" />,
+      <img key="python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" className="w-full h-full object-contain" />,
+      <img key="java" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" className="w-full h-full object-contain" />,
+      <img key="cpp" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" className="w-full h-full object-contain" />
+    ]
+  }
 };
 
 const Hero = () => {
-  const { theme } = useTheme();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className={`absolute inset-0 ${
-        theme === 'dark' 
-          ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900' 
-          : 'bg-gradient-to-br from-white via-gray-50 to-white'
-      } opacity-90`} />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background p-6">
+      <div className="absolute inset-0 bg-gradient-to-br from-background-darker via-background to-background-dark opacity-90" />
       
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl mx-auto text-center"
-        >
-          <motion.span
-            variants={itemVariants}
-            className="inline-block px-3 py-1 text-sm text-accent border border-accent rounded-full mb-6 hover:scale-105 transition-transform"
-          >
-            Welcome to my portfolio
-          </motion.span>
-          
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-accent via-accent-soft to-accent"
-          >
+      <div className="container relative z-10">
+        <motion.div className="text-center mb-12">
+          <motion.h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-accent">
             Mayank Singhal
           </motion.h1>
           
-          <motion.p
-            variants={itemVariants}
-            className="text-xl mb-12 text-muted-foreground"
-          >
+          <motion.p className="text-xl text-foreground/80">
             Full Stack Developer & Designer
           </motion.p>
-
-          {/* Skills Carousel */}
-          <div className="relative my-12 py-8 overflow-hidden">
-            {Object.entries(skills).map(([category, items], categoryIndex) => (
-              <motion.div
-                key={category}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: categoryIndex * 0.2 }}
-                className="mb-8"
-              >
-                <h3 className="text-lg font-semibold mb-4">{category}</h3>
-                <motion.div
-                  animate={{
-                    x: [-1000, 1000],
-                    transition: {
-                      x: {
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        duration: 20 + categoryIndex * 2,
-                        ease: "linear",
-                      },
-                    },
-                  }}
-                  className="flex gap-4 whitespace-nowrap"
-                >
-                  {[...items, ...items].map((skill, index) => (
-                    <div
-                      key={`${skill}-${index}`}
-                      className="px-6 py-2 bg-accent/10 rounded-full backdrop-blur-sm hover:bg-accent/20 transition-colors cursor-default"
-                    >
-                      {skill}
-                    </div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.div
-            variants={containerVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group px-8 py-3 bg-accent text-black font-medium rounded-full hover:bg-accent-soft transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden"
-            >
-              <span className="relative z-10">View Projects</span>
-              <motion.div
-                className="absolute inset-0 bg-accent-soft"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group px-8 py-3 border border-foreground text-foreground rounded-full hover:bg-foreground/10 transition-all duration-300 relative overflow-hidden"
-            >
-              <span className="relative z-10">Contact Me</span>
-              <motion.div
-                className="absolute inset-0 bg-foreground/5"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-          </motion.div>
         </motion.div>
-      </div>
-      
-      <motion.div
-        animate={{
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-foreground rounded-full flex justify-center">
-          <motion.div 
-            className="w-1 h-2 bg-foreground rounded-full mt-2"
-            animate={{
-              opacity: [0.5, 1, 0.5],
-              y: [0, 4, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
+
+        {/* Expanded Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {Object.entries(skills).map(([name, data]) => (
+            <motion.div
+              key={name}
+              className="p-6 rounded-2xl bg-black/40 backdrop-blur-sm border border-primary/10"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-white/5 rounded-xl">
+                  {data.icon}
+                </div>
+                <h3 className="text-xl font-medium text-white">{name}</h3>
+              </div>
+
+              <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 mb-6">
+                {data.svgs.map((svg, index) => (
+                  <motion.div
+                    key={index}
+                    className="relative flex-shrink-0 w-48 h-32 rounded-2xl overflow-hidden bg-black/40 p-6 transform rotate-[-5deg] hover:rotate-0 transition-transform"
+                    style={{ transformOrigin: "center center" }}
+                  >
+                    {svg}
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {data.stats.map((stat, index) => (
+                  <div key={index} className="flex items-center gap-2 bg-white/5 p-2 rounded-lg">
+                    <span className="text-xl">{stat.icon}</span>
+                    <span className="text-sm text-white/80">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {data.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-white/10 rounded-full text-sm text-white/80"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
