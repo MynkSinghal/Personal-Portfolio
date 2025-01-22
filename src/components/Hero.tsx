@@ -4,6 +4,8 @@ import { useState } from "react";
 import { WebDevIcon, BackendIcon, ToolsIcon, LanguagesIcon } from "./icons/SkillIcons";
 import { Marquee } from "@/components/ui/marquee";
 import { MorphingText } from "@/components/ui/morphing-text";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
+import { cn } from "@/lib/utils";
 
 const skills = {
   "Frontend Development": {
@@ -128,8 +130,17 @@ const Hero = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-6">
-      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/50 to-background/90" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-6 bg-background">
+      <InteractiveGridPattern
+        className={cn(
+          "absolute inset-0 z-0",
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
+        )}
+        width={20}
+        height={20}
+        squares={[80, 80]}
+        squaresClassName="stroke-primary/20 hover:stroke-primary/40 hover:fill-primary/5"
+      />
       
       <div className="container relative z-10">
         <motion.div className="text-center mb-12">

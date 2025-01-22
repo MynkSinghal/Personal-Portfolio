@@ -8,14 +8,20 @@ interface BackgroundLayoutProps {
 
 export function BackgroundLayout({ children }: BackgroundLayoutProps) {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-background">
+    <div className="relative min-h-screen w-full overflow-hidden bg-[#030712]">
       <AnimatedGridPattern 
-        className="absolute inset-0 z-0 opacity-50"
-        width={32}
-        height={32}
-        numSquares={35}
+        className="absolute inset-0 z-0"
+        width={50}
+        height={50}
+        strokeDasharray={2}
+        numSquares={150}
+        maxOpacity={0.5}
         duration={3}
-        maxOpacity={0.15}
+        repeatDelay={0.5}
+        style={{
+          stroke: "hsl(var(--primary))",
+          strokeWidth: "1.5px",
+        }}
       />
       <div className="relative z-10">
         {children}

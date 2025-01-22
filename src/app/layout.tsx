@@ -1,3 +1,4 @@
+import '@/styles/globals.css';
 import { BackgroundLayout } from "@/components/BackgroundLayout";
 
 export default function RootLayout({
