@@ -3,6 +3,7 @@ import { AnimatedModal } from "./ui/animated-modal";
 import { useState } from "react";
 import { WebDevIcon, BackendIcon, ToolsIcon, LanguagesIcon } from "./icons/SkillIcons";
 import { Marquee } from "@/components/ui/marquee";
+import { MorphingText } from "@/components/ui/morphing-text";
 
 const skills = {
   "Frontend Development": {
@@ -120,9 +121,15 @@ const skills = {
 };
 
 const Hero = () => {
+  const titles = [
+    "Full Stack\nDeveloper",
+    "AI\nEnthusiast",
+    "Graphic\nDesigner"
+  ];
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background p-6">
-      <div className="absolute inset-0 bg-gradient-to-br from-background-darker via-background to-background-dark opacity-90" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-6">
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/50 to-background/90" />
       
       <div className="container relative z-10">
         <motion.div className="text-center mb-12">
@@ -130,17 +137,20 @@ const Hero = () => {
             Mayank Singhal
           </motion.h1>
           
-          <motion.p className="text-xl text-foreground/80">
-            Full Stack Developer & Designer
-          </motion.p>
+          <div className="h-32">
+            <MorphingText 
+              texts={titles}
+              className="text-xl md:text-3xl text-foreground/80 whitespace-pre-line leading-tight" 
+            />
+          </div>
         </motion.div>
 
         {/* Skills Marquees */}
         <div className="space-y-6 mb-12">
           {Object.entries(skills).map(([category, data], idx) => (
             <div key={category} className="relative mx-auto max-w-5xl">
-              <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
-              <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
+              <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background/90 via-background/50 to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background/90 via-background/50 to-transparent z-10" />
               
               <Marquee 
                 className="py-4"
