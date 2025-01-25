@@ -77,13 +77,14 @@ const Contact = () => {
               e.preventDefault();
               const isValid = await form.trigger();
               if (isValid) {
-                const formData = new FormData(e.currentTarget);
                 try {
+                  const formValues = form.getValues();
                   const response = await fetch("https://formspree.io/f/manqnkda", {
                     method: "POST",
-                    body: formData,
+                    body: JSON.stringify(formValues),
                     headers: {
-                      "Accept": "application/json"
+                      "Accept": "application/json",
+                      "Content-Type": "application/json"
                     }
                   });
                   if (response.ok) {

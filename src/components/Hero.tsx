@@ -30,10 +30,11 @@ const skills = {
     ],
     skills: ["Material UI", "Redux", "Next.js", "TypeScript", "Tailwind CSS"],
     svgs: [
+      <img key="mui" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" className="w-full h-full object-contain" />,
       <img key="redux" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" className="w-full h-full object-contain" />,
       <img key="next" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" className="w-full h-full object-contain" />,
       <img key="ts" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" className="w-full h-full object-contain" />,
-      <img key="mui" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg" className="w-full h-full object-contain" />
+      <img key="tailwind" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-plain.svg" className="w-full h-full object-contain" />
     ]
   },
   "Backend Development": {
@@ -44,16 +45,16 @@ const skills = {
         label: "Node.js"
       },
       { 
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" className="w-6 h-6" />,
+        label: "Express"
+      },
+      { 
         icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" className="w-6 h-6" />,
         label: "MongoDB"
       },
       { 
         icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-6 h-6" />,
         label: "PostgreSQL"
-      },
-      { 
-        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" className="w-6 h-6" />,
-        label: "GraphQL"
       }
     ],
     skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL"],
@@ -61,7 +62,9 @@ const skills = {
       <img key="node" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" className="w-full h-full object-contain" />,
       <img key="express" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" className="w-full h-full object-contain" />,
       <img key="mongo" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" className="w-full h-full object-contain" />,
-      <img key="postgresql" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-full h-full object-contain" />
+      <img key="postgresql" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" className="w-full h-full object-contain" />,
+      <img key="graphql" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" className="w-full h-full object-contain" />,
+      <img key="rest" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg" className="w-full h-full object-contain" />
     ]
   },
   "Development Tools": {
@@ -76,11 +79,11 @@ const skills = {
         label: "Docker"
       },
       { 
-        icon: <img src="/public/icons/aws-svgrepo-com.svg" className="w-6 h-6" />,
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg" className="w-6 h-6" />,
         label: "AWS"
       },
       { 
-        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" className="w-6 h-6" />,
+        icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" className="w-6 h-6" />,
         label: "Firebase"
       }
     ],
@@ -89,6 +92,8 @@ const skills = {
       <img key="git" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" className="w-full h-full object-contain" />,
       <img key="docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" className="w-full h-full object-contain" />,
       <img key="aws" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg" className="w-full h-full object-contain" />,
+      <img key="firebase" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg" className="w-full h-full object-contain" />,
+      <img key="vercel" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" className="w-full h-full object-contain" />,
       <img key="figma" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" className="w-full h-full object-contain" />
     ]
   },
@@ -117,7 +122,9 @@ const skills = {
       <img key="js" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" className="w-full h-full object-contain" />,
       <img key="python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" className="w-full h-full object-contain" />,
       <img key="java" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" className="w-full h-full object-contain" />,
-      <img key="cpp" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" className="w-full h-full object-contain" />
+      <img key="cpp" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" className="w-full h-full object-contain" />,
+      <img key="sql" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" className="w-full h-full object-contain" />,
+      <img key="html" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" className="w-full h-full object-contain" />
     ]
   }
 };
