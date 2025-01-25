@@ -137,7 +137,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-6 bg-background">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-4 sm:p-6 bg-background">
       <InteractiveGridPattern
         className={cn(
           "absolute inset-0 z-0",
@@ -150,28 +150,28 @@ const Hero = () => {
       />
       
       <div className="container relative z-10">
-        <motion.div className="text-center mb-12">
-          <motion.h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-accent">
+        <motion.div className="text-center mb-8 sm:mb-12">
+          <motion.h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-accent">
             Mayank Singhal
           </motion.h1>
           
-          <div className="h-32">
+          <div className="h-24 sm:h-32">
             <MorphingText 
               texts={titles}
-              className="text-xl md:text-3xl text-foreground/80 whitespace-pre-line leading-tight" 
+              className="text-lg sm:text-xl md:text-3xl text-foreground/80 whitespace-pre-line leading-tight" 
             />
           </div>
         </motion.div>
 
         {/* Skills Marquees */}
-        <div className="space-y-6 mb-32">
+        <div className="space-y-4 sm:space-y-6 mb-16 sm:mb-32">
           {Object.entries(skills).map(([category, data], idx) => (
             <div key={category} className="relative mx-auto max-w-5xl">
               <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background/90 via-background/50 to-transparent z-10" />
               <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background/90 via-background/50 to-transparent z-10" />
               
               <Marquee 
-                className="py-4"
+                className="py-2 sm:py-4"
                 pauseOnHover
                 reverse={idx % 2 === 1}
                 repeat={4}
@@ -179,23 +179,23 @@ const Hero = () => {
                 {data.svgs.map((svg, index) => (
                   <div
                     key={index}
-                    className="mx-6 flex items-center gap-3 relative overflow-hidden
+                    className="mx-2 sm:mx-6 flex items-center gap-2 sm:gap-3 relative overflow-hidden
                       backdrop-blur-[6px] backdrop-saturate-[180%] 
                       bg-white/[0.05] hover:bg-white/[0.1]
                       border border-white/[0.05] 
-                      px-4 py-2 rounded-xl
+                      px-2 sm:px-4 py-1 sm:py-2 rounded-xl
                       transition-all duration-300 ease-in-out
                       group"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="w-12 h-12 flex items-center justify-center relative z-10">
+                    <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center relative z-10">
                       {data.skills[index] === "AWS" ? (
                         <img src="/icons/aws-svgrepo-com.svg" alt="AWS" className="w-full h-full object-contain" />
                       ) : (
                         svg
                       )}
                     </div>
-                    <span className="text-sm text-white/80 whitespace-nowrap font-['Roboto'] font-medium tracking-wide relative z-10">
+                    <span className="text-xs sm:text-sm text-white/80 whitespace-nowrap font-['Roboto'] font-medium tracking-wide relative z-10">
                       {data.skills[index]}
                     </span>
                   </div>

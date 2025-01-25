@@ -33,36 +33,36 @@ const Contact = () => {
   });
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-8 sm:py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-2xl mx-auto space-y-12"
+        className="max-w-2xl mx-auto space-y-8 sm:space-y-12"
       >
-        <section className="text-center space-y-4">
-          <h1 className="text-4xl font-bold">Get in Touch</h1>
-          <p className="text-lg text-muted-foreground">
+        <section className="text-center space-y-3 sm:space-y-4">
+          <h1 className="text-3xl sm:text-4xl font-bold">Get in Touch</h1>
+          <p className="text-base sm:text-lg text-muted-foreground">
             Have a question or want to work together? Feel free to reach out!
           </p>
         </section>
 
-        <div className="flex justify-center space-x-6 mb-8">
+        <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
           <Button variant="outline" size="icon" asChild>
             <a href="https://github.com/MynkSinghal" target="_blank" rel="noopener noreferrer">
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="sr-only">GitHub</span>
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
             <a href="https://linkedin.com/in/mynkkkk" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="sr-only">LinkedIn</span>
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
             <a href="mailto:singhal2004mayank@gmail.com">
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="sr-only">Email</span>
             </a>
           </Button>
@@ -72,7 +72,7 @@ const Contact = () => {
           <form 
             action="https://formspree.io/f/manqnkda" 
             method="POST"
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
             onSubmit={async (e) => {
               e.preventDefault();
               const isValid = await form.trigger();
@@ -104,11 +104,17 @@ const Contact = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel className="text-sm sm:text-base">Name</FormLabel>
                   <FormControl>
-                    <Input name="name" placeholder="Your name" required {...field} />
+                    <Input 
+                      name="name" 
+                      placeholder="Your name" 
+                      required 
+                      className="text-sm sm:text-base p-2 sm:p-3"
+                      {...field} 
+                    />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs sm:text-sm" />
                 </FormItem>
               )}
             />
@@ -117,11 +123,18 @@ const Contact = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="text-sm sm:text-base">Email</FormLabel>
                   <FormControl>
-                    <Input name="email" type="email" placeholder="your.email@example.com" required {...field} />
+                    <Input 
+                      name="email" 
+                      type="email" 
+                      placeholder="your.email@example.com" 
+                      required 
+                      className="text-sm sm:text-base p-2 sm:p-3"
+                      {...field} 
+                    />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs sm:text-sm" />
                 </FormItem>
               )}
             />
@@ -130,21 +143,21 @@ const Contact = () => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel className="text-sm sm:text-base">Message</FormLabel>
                   <FormControl>
                     <Textarea
                       name="message"
                       placeholder="Your message..."
-                      className="min-h-[150px]"
+                      className="min-h-[120px] sm:min-h-[150px] text-sm sm:text-base p-2 sm:p-3"
                       required
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="text-xs sm:text-sm" />
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full text-sm sm:text-base py-2 sm:py-3">
               Send Message
             </Button>
           </form>
