@@ -10,7 +10,7 @@ const projects = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     githubUrl: "https://github.com/MynkSinghal/VibrantHues--Color-Picker-Website",
     liveUrl: "https://vibrant-hues-color-picker-website-zjhg.vercel.app",
-    image: "public/projects/vibrant hues.png"
+    image: "/projects/vibrant hues.png"
   },
   {
     title: "Trylo - Virtual Try-On",
@@ -18,7 +18,7 @@ const projects = [
     techStack: ["React", "TensorFlow.js", "Node.js", "Express"],
     githubUrl: "https://github.com/MynkSinghal/Trylo-VirtualTryON/tree/master",
     liveUrl: "https://trylo-virtual-try-on.vercel.app",
-    image: "public/projects/Trylo.png"
+    image: "/projects/Trylo.png"
   },
   {
     title: "OMDB Movie Database",
@@ -26,7 +26,7 @@ const projects = [
     techStack: ["JavaScript", "Node.js", "Express", "OMDB API"],
     githubUrl: "https://github.com/MynkSinghal/WebDev-Movie-Search-APP-usingAPI/tree/main",
     liveUrl: "https://web-dev-movie-search-app-using-api.vercel.app",
-    image: "public/projects/Movie search.png"
+    image: "/projects/Movie search.png"
   },
   {
     title: "Heart Risk Detection",
@@ -34,7 +34,7 @@ const projects = [
     techStack: ["Python", "TensorFlow", "React", "Scikit-learn"],
     githubUrl: "https://github.com/MynkSinghal/healthcare-aiLab/tree/main",
     liveUrl: "https://healthcare-ai-lab.vercel.app",
-    image: "public/projects/heart.png"
+    image: "/projects/heart.png"
   }
 ];
 
