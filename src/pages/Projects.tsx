@@ -5,46 +5,37 @@ import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A brief description of project 1 and its key features.",
-    techStack: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "#",
-    liveUrl: "#",
-    image: "/placeholder.svg"
+    title: "Vibrant Hues",
+    description: "A modern color palette management application that helps designers and developers discover, create, and preview beautiful color combinations in both light and dark modes. Features include palette downloads, real-time previews, and an intuitive user interface.",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    githubUrl: "https://github.com/MynkSinghal/VibrantHues--Color-Picker-Website",
+    liveUrl: "https://vibrant-hues-color-picker-website-zjhg.vercel.app",
+    image: "public/projects/vibrant hues.png"
   },
   {
-    title: "Project 2",
-    description: "A brief description of project 2 and its key features.",
-    techStack: ["Next.js", "Node.js", "MongoDB"],
-    githubUrl: "#",
-    liveUrl: "#",
-    image: "/placeholder.svg"
+    title: "Trylo - Virtual Try-On",
+    description: "An innovative AI-powered virtual try-on platform that enables users to visualize clothing on multiple poses. This technology bridges the gap between online shopping and the physical fitting room experience.",
+    techStack: ["React", "TensorFlow.js", "Node.js", "Express"],
+    githubUrl: "https://github.com/MynkSinghal/Trylo-VirtualTryON/tree/master",
+    liveUrl: "https://trylo-virtual-try-on.vercel.app",
+    image: "public/projects/Trylo.png"
   },
   {
-    title: "Project 2",
-    description: "A brief description of project 2 and its key features.",
-    techStack: ["Next.js", "Node.js", "MongoDB"],
-    githubUrl: "#",
-    liveUrl: "#",
-    image: "/placeholder.svg"
+    title: "OMDB Movie Database",
+    description: "A dynamic movie search application integrated with the OMDB API, allowing users to explore a vast database of films. Features include detailed movie information, responsive design, and real-time search functionality.",
+    techStack: ["JavaScript", "Node.js", "Express", "OMDB API"],
+    githubUrl: "https://github.com/MynkSinghal/WebDev-Movie-Search-APP-usingAPI/tree/main",
+    liveUrl: "https://web-dev-movie-search-app-using-api.vercel.app",
+    image: "public/projects/Movie search.png"
   },
   {
-    title: "Project 2",
-    description: "A brief description of project 2 and its key features.",
-    techStack: ["Next.js", "Node.js", "MongoDB"],
-    githubUrl: "#",
-    liveUrl: "#",
-    image: "/placeholder.svg"
-  },
-  {
-    title: "Project 2",
-    description: "A brief description of project 2 and its key features.",
-    techStack: ["Next.js", "Node.js", "MongoDB"],
-    githubUrl: "#",
-    liveUrl: "#",
-    image: "/placeholder.svg"
-  },
-  // Add more projects as needed
+    title: "Heart Risk Detection",
+    description: "A machine learning-powered web application that predicts heart disease risk using the Kaggle dataset. The model analyzes various health parameters to provide risk assessments, helping in early detection and prevention.",
+    techStack: ["Python", "TensorFlow", "React", "Scikit-learn"],
+    githubUrl: "https://github.com/MynkSinghal/healthcare-aiLab/tree/main",
+    liveUrl: "https://healthcare-ai-lab.vercel.app",
+    image: "public/projects/heart.png"
+  }
 ];
 
 const Projects = () => {
