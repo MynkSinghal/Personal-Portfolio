@@ -32,12 +32,6 @@ const Contact = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast.success("Message sent successfully!");
-    form.reset();
-  };
-
   return (
     <div className="container mx-auto px-4 py-16">
       <motion.div
@@ -55,19 +49,19 @@ const Contact = () => {
 
         <div className="flex justify-center space-x-6 mb-8">
           <Button variant="outline" size="icon" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/MynkSinghal" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5" />
               <span className="sr-only">GitHub</span>
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/mynkkkk" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-5 h-5" />
               <span className="sr-only">LinkedIn</span>
             </a>
           </Button>
           <Button variant="outline" size="icon" asChild>
-            <a href="mailto:your.email@example.com">
+            <a href="mailto:singhal2004mayank@gmail.com">
               <Mail className="w-5 h-5" />
               <span className="sr-only">Email</span>
             </a>
@@ -75,7 +69,35 @@ const Contact = () => {
         </div>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form 
+            action="https://formspree.io/f/manqnkda" 
+            method="POST"
+            className="space-y-6"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const isValid = await form.trigger();
+              if (isValid) {
+                const formData = new FormData(e.currentTarget);
+                try {
+                  const response = await fetch("https://formspree.io/f/manqnkda", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                      "Accept": "application/json"
+                    }
+                  });
+                  if (response.ok) {
+                    toast.success("Message sent successfully!");
+                    form.reset();
+                  } else {
+                    toast.error("Failed to send message. Please try again.");
+                  }
+                } catch (error) {
+                  toast.error("Failed to send message. Please try again.");
+                }
+              }
+            }}
+          >
             <FormField
               control={form.control}
               name="name"
@@ -83,7 +105,7 @@ const Contact = () => {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" {...field} />
+                    <Input name="name" placeholder="Your name" required {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -96,7 +118,7 @@ const Contact = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="your.email@example.com" {...field} />
+                    <Input name="email" type="email" placeholder="your.email@example.com" required {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -110,8 +132,10 @@ const Contact = () => {
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
+                      name="message"
                       placeholder="Your message..."
                       className="min-h-[150px]"
+                      required
                       {...field}
                     />
                   </FormControl>
@@ -127,6 +151,6 @@ const Contact = () => {
       </motion.div>
     </div>
   );
-};
+}
 
 export default Contact;
