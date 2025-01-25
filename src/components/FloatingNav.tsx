@@ -17,11 +17,6 @@ const FloatingNav = () => {
       path: "/projects"
     },
     {
-      name: "About",
-      icon: <User className="h-4 w-4" />,
-      path: "/about"
-    },
-    {
       name: "Contact",
       icon: <Mail className="h-4 w-4" />,
       path: "/contact"

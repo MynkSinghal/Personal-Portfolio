@@ -1,0 +1,119 @@
+{
+    "personalInfo": {
+      "name": "Mayank Singhal",
+      "contact": "+91 8448039908",
+      "email": "singhal2004mayank@gmail.com",
+      "links": [
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/mynkkkk"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/MynkSinghal"
+        }
+      ]
+    },
+    "education": [
+      {
+        "institution": "Manipal University Jaipur, Jaipur, RJ",
+        "degree": "B.Tech Computer Science Engineering",
+        "gpa": "8.23",
+        "dates": "Sep 2022 – July 2024"
+      },
+      {
+        "institution": "Lovely Public Sr. Sec. School, Delhi, India",
+        "degree": "CBSE PCM",
+        "percentage": "93.2%",
+        "dates": "April 2020 – May 2022"
+      }
+    ],
+    "experience": [
+      {
+        "company": "LaVisuals, Discord",
+        "position": "Owner/Founder",
+        "dates": "Feb 2021 – August 2024",
+        "points": [
+          "Spearheaded and launched a thriving online marketplace, offering premium anime graphics to customers",
+          "Utilized targeted marketing strategies and personalized customer service to foster a loyal customer base of over 300 individuals",
+          "Spearheaded effective customer engagement and business development efforts, resulting in an impressive revenue growth of 30%",
+          "Successfully delivered workshops and bootcamps to groups of 25+ participants"
+        ]
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Goldman Sachs Software Engineering Virtual Experience Program",
+        "issuer": "Forage Platform",
+        "date": "May 2024",
+        "points": [
+          "Completed a job simulation as a Goldman Sachs governance analyst responsible for assessing IT security and suggesting improvements",
+          "Identified outdated password hashing algorithms by cracking passwords using Hashcat",
+          "Drafted a comprehensive memo detailing proposed enhancements to password protection"
+        ]
+      }
+    ],
+    "volunteering": [
+      {
+        "organization": "Elicit 23, MUJ ACM Sigbed Chapter",
+        "position": "Head of Events",
+        "location": "Jaipur, RJ",
+        "dates": "Sep 2023 – Oct 2023",
+        "points": [
+          "Directed event planning, delivering three successful events with 10,000+ attendees each",
+          "Drafted event strategies including detailed timelines, ensuring seamless execution",
+          "Increased event attendance by 25%"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Heart Disease Risk Assessment",
+        "technologies": ["TypeScript", "Python", "Tailwind CSS", "Vite"],
+        "dates": "July 2024 – Present",
+        "points": [
+          "Developed a web-based tool to assess heart disease risk using health data and AI-powered logistic regression models",
+          "Built a responsive web application using React and TypeScript"
+        ]
+      }
+    ],
+    "skills": {
+      "languages": ["C", "Java (Basics)", "Python", "JavaScript", "TypeScript", "SQL"],
+      "technologies": ["ReactJS", "Bootstrap", "HTML 5", "CSS", "NodeJS", "ExpressJS", "Tailwind CSS"],
+      "tools": ["Git", "GitHub", "MySQL", "Notion", "Slack", "Figma"],
+      "courses": ["Data Structures and Algorithms", "OS", "DBMS", "Computer Networks"],
+      "business": ["Marketing", "Collaboration", "Operations", "Project Management", "Team Building"],
+      "certificates": [
+        "Managing Network Security",
+        "Introduction to Java",
+        "Cisco Switching, Routing, and Wireless Essentials",
+        "Goldman Sachs Software Engineering Virtual Experience Program"
+      ]
+    },
+    "additionalLinks": [
+      {
+        "label": "LinkedIn Profile",
+        "url": "https://linkedin.com/in/mynkkkk"
+      },
+      {
+        "label": "GitHub Profile",
+        "url": "https://github.com/MynkSinghal"
+      },
+      {
+        "label": "Project on GitHub",
+        "url": "https://github.com/MynkSinghal/healtcare-AILab-withBackend"
+      },
+      {
+        "label": "Coursera Certificate 1",
+        "url": "https://www.coursera.org/account/accomplishments/verify/VMBKRE6VXTV9"
+      },
+      {
+        "label": "Coursera Certificate 2",
+        "url": "https://coursera.org/share/3703204470c6879edefe3f070f5214e2"
+      },
+      {
+        "label": "Goldman Sachs Certificate",
+        "url": "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_a3XaGWu6Ws6z6kbzy_1716723486259_completion_certificate.pdf"
+      }
+    ]
+  }

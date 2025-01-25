@@ -20,6 +20,30 @@ const projects = [
     liveUrl: "#",
     image: "/placeholder.svg"
   },
+  {
+    title: "Project 2",
+    description: "A brief description of project 2 and its key features.",
+    techStack: ["Next.js", "Node.js", "MongoDB"],
+    githubUrl: "#",
+    liveUrl: "#",
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Project 2",
+    description: "A brief description of project 2 and its key features.",
+    techStack: ["Next.js", "Node.js", "MongoDB"],
+    githubUrl: "#",
+    liveUrl: "#",
+    image: "/placeholder.svg"
+  },
+  {
+    title: "Project 2",
+    description: "A brief description of project 2 and its key features.",
+    techStack: ["Next.js", "Node.js", "MongoDB"],
+    githubUrl: "#",
+    liveUrl: "#",
+    image: "/placeholder.svg"
+  },
   // Add more projects as needed
 ];
 
