@@ -6,7 +6,7 @@ import { Github, ExternalLink } from "lucide-react";
 const projects = [
   {
     title: "Vibrant Hues",
-    description: "A modern color palette management application that helps designers and developers discover, create, and preview beautiful color combinations in both light and dark modes. Features include palette downloads, real-time previews, and an intuitive user interface.",
+    description: "A modern colour palette management application that helps designers and developers discover, create, and preview color palettes in both light and dark modes. Features include palette downloads, real-time previews, and an intuitive user interface.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     githubUrl: "https://github.com/MynkSinghal/VibrantHues--Color-Picker-Website",
     liveUrl: "https://vibrant-hues-color-picker-website-zjhg.vercel.app",
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: "Trylo - Virtual Try-On",
-    description: "An innovative AI-powered virtual try-on platform that enables users to visualize clothing on multiple poses. This technology bridges the gap between online shopping and the physical fitting room experience.",
+    description: "An innovative AI-powered virtual try-on platform enabling realistic garment visualization on various pose or body stances. This technology bridges the gap between online shopping and the physical fitting room experience.",
     techStack: ["React", "TensorFlow.js", "Node.js", "Express"],
     githubUrl: "https://github.com/MynkSinghal/Trylo-VirtualTryON/tree/master",
     liveUrl: "https://trylo-virtual-try-on.vercel.app",
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: "Heart Risk Detection",
-    description: "A machine learning-powered web application that predicts heart disease risk using the Kaggle dataset. The model analyzes various health parameters to provide risk assessments, helping in early detection and prevention.",
+    description: "A machine learning-powered web application that predicts heart disease risk using the Kaggle dataset. The model analyzes various health parameters providing risk assessment and further helping in early detection and prevention.",
     techStack: ["Python", "TensorFlow", "React", "Scikit-learn"],
     githubUrl: "https://github.com/MynkSinghal/healthcare-aiLab/tree/main",
     liveUrl: "https://healthcare-ai-lab.vercel.app",
