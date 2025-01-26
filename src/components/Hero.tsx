@@ -3,7 +3,7 @@ import { AnimatedModal } from "./ui/animated-modal";
 import { useState } from "react";
 import { WebDevIcon, BackendIcon, ToolsIcon, LanguagesIcon } from "./icons/SkillIcons";
 import { Marquee } from "@/components/ui/marquee";
-import { MorphingText } from "@/components/ui/morphing-text";
+import { TypingAnimation } from "@/components/ui/typing-animation";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 import { cn } from "@/lib/utils";
 
@@ -130,12 +130,6 @@ const skills = {
 };
 
 const Hero = () => {
-  const titles = [
-    "Full Stack\nDeveloper",
-    "AI\nEnthusiast",
-    "Graphic\nDesigner"
-  ];
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden p-4 sm:p-6 bg-background">
       <InteractiveGridPattern
@@ -150,21 +144,24 @@ const Hero = () => {
       />
       
       <div className="container relative z-10">
-        <motion.div className="text-center mb-8 sm:mb-12">
+        <motion.div className="text-center mb-4 sm:mb-6">
           <motion.h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary-light to-accent">
             Mayank Singhal
           </motion.h1>
           
-          <div className="h-24 sm:h-32">
-            <MorphingText 
-              texts={titles}
-              className="text-lg sm:text-xl md:text-3xl text-foreground/80 whitespace-pre-line leading-tight" 
-            />
+          <div className="h-16 sm:h-24">
+            <TypingAnimation 
+              className="text-lg sm:text-xl md:text-3xl text-foreground/80 font-bold"
+              duration={50}
+              delay={500}
+            >
+              Full Stack Developer | AI Enthusiast | Graphic Designer
+            </TypingAnimation>
           </div>
         </motion.div>
 
         {/* Skills Marquees */}
-        <div className="space-y-4 sm:space-y-6 mb-16 sm:mb-32">
+        <div className="space-y-4 sm:space-y-6 -mt-4 sm:-mt-8">
           {Object.entries(skills).map(([category, data], idx) => (
             <div key={category} className="relative mx-auto max-w-5xl">
               <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background/90 via-background/50 to-transparent z-10" />
