@@ -21,6 +21,14 @@ const projects = [
     image: "/projects/Trylo.png"
   },
   {
+    title: "DocBook - Appointment Booking System",
+    description: "DocBook: Effortlessly manage doctor appointments with automated booking, reminders, and seamless calendar for patients and healthcare providers.",
+    techStack: ["React", "Typescript", "Node.js", "Supabase"],
+    githubUrl: "https://github.com/MynkSinghal/Docbook-booking-system",
+    liveUrl: "https://docbook-one.vercel.app",
+    image: "/projects/DocBook.png"
+  },
+  {
     title: "OMDB Movie Database",
     description: "A dynamic movie search application integrated with the OMDB API, allowing users to explore a vast database of films. Features include detailed movie information, responsive design, and real-time search functionality.",
     techStack: ["JavaScript", "Node.js", "Express", "OMDB API"],
