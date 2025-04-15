@@ -29,6 +29,15 @@ const projects = [
     image: "/projects/DocBook.png"
   },
   {
+    title: "Flow-write A MacOS App",
+    description: "A MacOS App, which helps in flow-writing by giving you 3 random words, and makes you wander your mind, write freely! No backspaces allowed, just free writing",
+    techStack: ["SwiftUI"],
+    githubUrl: "https://github.com/MynkSinghal/IdeaDice",
+    liveUrl: "https://github.com/MynkSinghal/IdeaDice/releases/download/v1.0.0/IdeaDice.app.zip",
+    image: "/projects/Flow-write.png"
+  },
+
+  {
     title: "OMDB Movie Database",
     description: "A dynamic movie search application integrated with the OMDB API, allowing users to explore a vast database of films. Features include detailed movie information, responsive design, and real-time search functionality.",
     techStack: ["JavaScript", "Node.js", "Express", "OMDB API"],
@@ -43,7 +52,8 @@ const projects = [
     githubUrl: "https://github.com/MynkSinghal/healthcare-aiLab/tree/main",
     liveUrl: "https://healthcare-ai-lab.vercel.app",
     image: "/projects/heart.png"
-  }
+  },
+  
 ];
 
 const Projects = () => {
